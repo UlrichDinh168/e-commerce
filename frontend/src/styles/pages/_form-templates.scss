@@ -1,0 +1,30 @@
+.form-templates {
+	@include desktop-content();
+	h2 {
+		text-align: center;
+		margin-bottom: 3.2rem;
+	}
+
+	&__content {
+		&-item {
+			box-shadow: $box-shadow-normal;
+			margin: 1.2rem 0;
+			padding: 1.2rem;
+			cursor: pointer;
+		}
+	}
+	.form-templates__items {
+		width: 100%;
+		.controls {
+			display: flex;
+			justify-content: center;
+			margin: 1.2rem 0;
+			.button-container {
+				margin: 0 1.2rem;
+			}
+		}
+		.form-template__item {
+			width: 100%;
+		}
+	}
+}

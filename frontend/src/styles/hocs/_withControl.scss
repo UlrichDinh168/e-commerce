@@ -1,0 +1,12 @@
+.with-control {
+	display: flex;
+	margin: 1.2rem 0;
+	.children {
+		flex: 1;
+	}
+	.control {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}

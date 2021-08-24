@@ -1,7 +1,7 @@
 import React, { lazy, Suspense } from "react";
 import { Switch, Redirect, BrowserRouter, Route } from "react-router-dom";
-import ProtectedRoute from "../shared/components/auth/ProtectedRoute";
-import { ROUTER_PATH, USER_ROLE } from "../constants";
+import ProtectedRoute from "./components/auth/ProtectedRoute";
+import { ROUTER_PATH, USER_ROLE } from "./constants";
 import { Helmet } from "react-helmet";
 
 const Home = lazy(() => import("./pages/Home"));

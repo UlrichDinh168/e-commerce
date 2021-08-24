@@ -1,0 +1,67 @@
+.modal {
+	&__wrapper {
+		position: fixed;
+		z-index: 1000; //above all
+		left: 0;
+		top: 0;
+		width: 100%; /* Full width */
+		height: 100%; /* Full height */
+		overflow: auto; /* Enable scroll if needed */
+		background-color: rgba(0, 0, 0, 0.7); /* Black w/ opacity */
+	}
+	&__container {
+		@include box-shadow-default();
+		background-color: $white;
+		margin: 0 8rem;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		max-height: calc(100vh - 8rem);
+		padding: 1.5rem 3rem;
+	}
+	&__header {
+		position: relative;
+		text-align: center;
+		margin-bottom: 1rem;
+		.modal__close-button-container {
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+	}
+
+	&__footer {
+		margin-top: 1rem;
+	}
+
+	&__content {
+		max-height: calc(100vh - 22rem);
+		overflow-y: scroll;
+	}
+	&::content {
+		animation: {
+			name: animate-top;
+			duration: 0.4s;
+		}
+	}
+}
+
+.show {
+	display: block;
+}
+
+.hide {
+	display: none;
+}
+
+/* Add Animation */
+@keyframes animate-top {
+	from {
+		top: -100%;
+		opacity: 0;
+	}
+	to {
+		top: 0;
+		opacity: 1;
+	}
+}

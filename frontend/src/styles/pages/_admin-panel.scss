@@ -1,0 +1,17 @@
+.admin-panel {
+	&__permissions {
+        width: 100%;
+		.roles {
+			display: flex;
+		}
+		.checkbox__container {
+			margin: 0.8rem;
+		}
+		.submit {
+			@include flex;
+			.button-container {
+				width: fit-content;
+			}
+		}
+	}
+}
