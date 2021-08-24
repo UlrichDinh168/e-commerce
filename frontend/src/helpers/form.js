@@ -1,7 +1,6 @@
 /**
  * form utils
  *
- * @author Ulrich
  *
  */
 import React from "react";

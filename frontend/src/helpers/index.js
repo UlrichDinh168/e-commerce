@@ -1,7 +1,6 @@
 /**
  * Entry point for all Helpers
  *
- * @author Ulrich
  *
  */
 

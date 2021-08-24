@@ -3,7 +3,6 @@
  * Allows user to upload an attachment
  * Display file name and (image)
  *
- * @author Ulrich
  *
  */
 

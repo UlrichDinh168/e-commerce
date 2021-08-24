@@ -57,6 +57,12 @@ export const Logout = () => ({
   },
 });
 
+export const localLogout = () => {
+  return {
+    type: types.localLogout,
+  };
+};
+
 export const verifySession = () => ({
   type: types.verifySession,
   payload: {

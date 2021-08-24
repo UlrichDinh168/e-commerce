@@ -1,14 +1,20 @@
 import React, { lazy, Suspense } from "react";
-import { Switch, Redirect, BrowserRouter, Route } from "react-router-dom";
+import {
+  Switch,
+  Redirect,
+  BrowserRouter as Router,
+  Route,
+} from "react-router-dom";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import { ROUTER_PATH, USER_ROLE } from "./constants";
 import { Helmet } from "react-helmet";
+import Loading from "shared/LoadingIndicator";
 
-const Home = lazy(() => import("./pages/Home"));
+const Home = lazy(() => import(/* webpackChunkName: "Home" */ "./pages/Home"));
 const App = ({ isAuthenticated }) => {
   return (
     <Suspense fallback={<Loading />}>
-      <Helmet titleTemplate="%s" defaultTitle="Aula ERP">
+      <Helmet titleTemplate="%s" defaultTitle="">
         <meta name="description" content="A React.js Boilerplate application" />
       </Helmet>
       <Router>

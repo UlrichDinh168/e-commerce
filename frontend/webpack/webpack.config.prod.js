@@ -1,7 +1,6 @@
 /**
  * Production webpack configuration
  *
- * @author Ulrich
  *
  */
 const merge = require("webpack-merge");

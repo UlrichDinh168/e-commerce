@@ -1,7 +1,6 @@
 /**
  * hook & utils for files
  *
- * @author Ulrich
  *
  */
 import React from "react";

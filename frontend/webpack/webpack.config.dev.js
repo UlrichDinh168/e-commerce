@@ -1,7 +1,6 @@
 /**
  * Webpack config for building front-end in development
  *
- * @author Ulrich
  *
  */
 

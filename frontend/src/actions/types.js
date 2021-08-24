@@ -16,6 +16,7 @@ export const loginTypes = {
   ggLogin: "GG_LOGIN",
   ggLoginSuccess: "GG_LOGIN_SUCCESS",
   ggLoginFail: "GG_LOGIN_FAIL",
+  localLogout: "LOGOUT_LOCAL",
   logout: "LOGOUT",
   logoutSuccess: "LOGOUT_SUCCESS",
   logoutFail: "LOGOUT_FAIL",

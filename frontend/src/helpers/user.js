@@ -1,7 +1,6 @@
 /**
  * Helpers for user
  *
- * @author Ulrich
  *
  */
 

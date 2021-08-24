@@ -1,7 +1,6 @@
 /**
  * Common webpack configuration
  *
- * @author Ulrich
  *
  */
 

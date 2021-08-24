@@ -1,7 +1,6 @@
 /**
  * API Status module
  *
- * @author Ulrich
  *
  */
 const status = {

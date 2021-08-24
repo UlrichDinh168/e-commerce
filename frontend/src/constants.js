@@ -1,6 +1,6 @@
 export const ROUTER_PATH = {
-  home: "/",
-  userDetails: "/user_details",
+  HOME: "/",
+  USER_DETAILS: "/user_details",
 };
 
 export const PERSIST_KEY = "root";

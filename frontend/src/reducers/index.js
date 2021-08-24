@@ -20,18 +20,7 @@ import { notificationReducer, notificationSelectors } from "./notification";
 const index = combineReducers({
   router: connectRouter(history),
   login: loginReducer,
-  user: userReducer,
-  users: usersReducer,
-  company: companyReducer,
-  companies: companiesReducer,
-  serviceRequests: serviceRequestsReducer,
-  devices: devicesReducer,
-  locations: locationsReducer,
-  location: locationReducer,
-  serviceRequest: serviceRequestReducer,
   notification: notificationReducer,
-  orders: ordersReducer,
-  order: orderReducer,
 });
 export default (state, action) => {
   if (

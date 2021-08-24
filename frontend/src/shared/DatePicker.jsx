@@ -1,7 +1,6 @@
 /**
  * Date picker
  *
- * @author Ulrich
  *
  */
 import React, { Fragment, useState } from "react";

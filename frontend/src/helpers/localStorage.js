@@ -1,7 +1,6 @@
 /**
  * Helpers for local storage
  *
- * @author Ulrich
  *
  */
 
