@@ -1,9 +1,9 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import ErrorBoundary from "sharesharedd/components/ErrorBoundary";
-import { useAuthorization, authorizedState } from "../../../hooks";
-import { ROUTER_PATH } from "../../constants";
+import ErrorBoundary from "shared/ErrorBoundary";
+import { useAuthorization, authorizedState } from "hooks";
+import { ROUTER_PATH } from "constants";
 // Wrap title and meta data to Component
 const withHelmet = () => {
   <>
