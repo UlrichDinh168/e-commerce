@@ -1,0 +1,54 @@
+.date-picker {
+	label {
+		margin-bottom: 0.4rem;
+	}
+	.MuiInput-root {
+		padding: 1.2rem;
+		font-size: 1.6rem;
+		background-color: $app-background;
+		cursor: pointer;
+		input {
+			padding: unset !important;
+			&::-webkit-scrollbar-thumb {
+				background: unset !important;
+				border-radius: 1rem !important;
+			}
+		}
+	}
+	.MuiInput-underline:before {
+		border-bottom: unset !important;
+	}
+}
+.MuiPopover-root,
+.MuiDialog-root,
+.MuiPaper-root {
+	z-index: 13000000 !important;
+	.MuiPickersBasePicker-pickerView {
+		font-size: 1.6rem !important;
+	}
+	p,
+	span {
+		font-size: 1.6rem;
+	}
+}
+*::-webkit-scrollbar-thumb {
+	// background: unset !important;
+	border-radius: 1rem !important;
+}
+.MuiFormControl-root {
+}
+.time-picker {
+	&__content {
+		display: flex;
+		align-items: center;
+		.MuiFormControl-root {
+			margin-right: -36px !important;
+		}
+	}
+	.material-icons {
+		color: $gray;
+		font-size: 2.8rem;
+		margin: 0 0.4rem;
+		z-index: 1;
+	}
+}

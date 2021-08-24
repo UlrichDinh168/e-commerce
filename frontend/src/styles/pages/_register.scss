@@ -1,0 +1,21 @@
+.register {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	@include desktop-content;
+
+	&__form {
+		width: 80%;
+		&-content {
+			margin-bottom: 3rem;
+		}
+		.buttons {
+			@include flex;
+			.button-container {
+				margin: 0 1.2rem;
+			}
+		}
+	}
+}

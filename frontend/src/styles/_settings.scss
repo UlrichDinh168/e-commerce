@@ -1,0 +1,85 @@
+//
+// Define variables, mixins
+//
+
+// Font
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700');
+// MaterialUI Icons
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+// Setting
+$default-size: 1.6rem;
+
+// Color
+$primary: #fc4f00;
+$secondary: #00325a;
+
+$white: #fff;
+$black: #000;
+
+// Material UI color
+$red: #f44336;
+$pink: #e91e63;
+$purple: #9c27b0;
+$deep-purple: #673ab7;
+$indigo: #3f51b5;
+$blue: #2196f3;
+$light-blue: #03a9f4;
+$cyan: #00bcd4;
+$teal: #009688;
+$green: #4caf50;
+$light-green: #8bc34a;
+$lime: #cddc39;
+$yellow: #ffeb3b;
+$amber: #ffc107;
+$orange: #ff9800;
+$deep-orange: #ff5722;
+$brown: #795548;
+$grey: #9e9e9e;
+$blue-grey: #607d8b;
+
+$dark-gray: #9d9d9d;
+$ming-blue: #3d6385;
+$green-blue: #9bcec2;
+$gray: #9d9d9d;
+$lighter-gray: #f7f7f7;
+$light-white-gray: #f8f8f8;
+$light-gray: #f6f6f6;
+$alto-gray: #d3d3d3;
+$dark-alto-gray: #d7d7d7;
+$white-gray: #ededed;
+$darker-white: #f5f5f5;
+
+// Font-family
+$bebas-neue: 'bebas-neue';
+$montserrat: 'Montserrat';
+$font-1: $bebas-neue;
+$font-2: $montserrat;
+
+// Font-size
+$font-size-multiplier: 1;
+$font-size: $default-size * $font-size-multiplier;
+$font-multiplier-base: 0.875;
+$font-size-base: $font-size * $font-multiplier-base;
+$font-multiplier-large: 1.125;
+$font-size-large: $font-size * $font-multiplier-large;
+$font-multiplier-small: 0.6875;
+$font-size-small: $font-size * $font-multiplier-small;
+$font-multiplier-header: 1.4;
+$font-size-header: $font-size * $font-multiplier-header;
+$font-multiplier-sub-header: 1.25;
+$font-size-sub-header: $font-size * $font-multiplier-sub-header;
+
+// Font-weight
+$font-thin: 200;
+$font-light: 300;
+$font-regular: 400;
+$font-bold: 600;
+$font-bolder: 800;
+
+// Transition
+$transition-default: all 0.4s;
+
+// border-radius
+$radius-default: 5px;
+$radius-medium: 10px;

@@ -1,0 +1,15 @@
+.files {
+	h1 {
+		text-align: center;
+		margin-bottom: 2rem;
+	}
+	&-content {
+		margin: 1.2rem;
+		&__item {
+			width: 100%;
+		}
+	}
+	.button-container {
+		margin: 1.2rem 0;
+	}
+}

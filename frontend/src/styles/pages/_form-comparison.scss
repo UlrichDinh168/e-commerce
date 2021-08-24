@@ -1,0 +1,47 @@
+.form-comparison {
+	display: flex;
+	& > div {
+		margin: 1.2rem;
+	}
+	&__template-data {
+		flex: 1;
+		border: 1px solid $gray;
+		padding: 1.2rem;
+
+		.data-item {
+			cursor: pointer;
+			margin: 1.2rem 0;
+			padding: 1.2rem;
+
+			&.active {
+				background: $gray;
+				color: $white;
+				font-weight: bold;
+			}
+		}
+	}
+	&__compare {
+		flex: 5;
+
+		table {
+			width: 100%;
+		}
+		td {
+			text-align: center;
+			padding: 1.2rem;
+		}
+		table,
+		tr,
+		td {
+			border: 1px solid $gray;
+			border-collapse: collapse;
+		}
+		.control {
+			display: flex;
+			justify-content: flex-end;
+			.button-container {
+				margin-top: 1.2rem;
+			}
+		}
+	}
+}

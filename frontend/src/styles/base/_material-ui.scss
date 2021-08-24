@@ -1,0 +1,23 @@
+[class*='-colorPrimary'] {
+	background-color: $primary;
+}
+
+[class*='-colorSecondary'] {
+	background-color: $secondary;
+}
+
+.Mui-disabled {
+	fill: $gray !important;
+	color: $gray !important;
+}
+.MuiStepLabel-label,
+.MuiTypography-caption {
+	font-size: 1.6rem !important;
+}
+.MuiStepIcon-text,
+.MuiButtonBase-root {
+	font-size: 1.6rem !important;
+}
+.MuiSvgIcon-root {
+	font-size: 2rem !important;
+}

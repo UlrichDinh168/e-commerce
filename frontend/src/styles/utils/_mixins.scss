@@ -1,0 +1,134 @@
+//
+// Mixins
+//
+/**
+ * Breakpoints
+ *
+ * 1em = 16px
+ * phone
+ * tab-port
+ * tab-land
+ * desktop
+ * big-desktop
+ */
+@mixin breakpoint($view) {
+	@if ($view == small-phone) {
+		@media (max-width: 25em) {
+			@content; // 400px
+		}
+	}
+
+	@if ($view == phone) {
+		@media (min-width: 25rem) and (max-width: 37.5em) {
+			@content; // 400px - 600px
+		}
+	}
+
+	@if ($view == tab-port) {
+		@media (min-width: 37.5em) {
+			@content; // 600px
+		}
+	}
+
+	@if ($view == tab-land) {
+		@media (min-width: 56.25em) {
+			@content; // 900px
+		}
+	}
+
+	@if ($view == desktop) {
+		@media (min-width: 75em) {
+			@content; // 1200px
+		}
+	}
+
+	@if ($view == desktop-large) {
+		@media (min-width: 112.5em) {
+			@content; // 1800px
+		}
+	}
+}
+
+@mixin button-container-default(
+	$flex-direction: row,
+	$justify-content: center,
+	$align-items: center
+) {
+	display: flex;
+	flex-direction: $flex-direction;
+	justify-content: $justify-content;
+	align-items: $align-items;
+	// width: fit-content;
+}
+
+@mixin button-default() {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-transform: uppercase;
+	transition: $transition-default;
+	border: 0;
+	border-radius: $radius-huge;
+	width: 100%;
+	color: $white;
+	box-shadow: 0 0.5rem 1rem rgba($black, 0.15);
+
+	&:hover {
+		cursor: pointer;
+		opacity: 0.7;
+	}
+	&:disabled {
+		cursor: not-allowed;
+		opacity: 1;
+	}
+
+	&:hover,
+	&:focus {
+		box-shadow: 0 0.125rem 0.25rem rgba($black, 0.075);
+	}
+}
+
+@mixin button-text() {
+	padding: 1rem;
+	text-align: center;
+	flex-direction: row;
+	font-family: $montserrat;
+	font-size: $font-size-base;
+	min-width: 16rem;
+}
+@mixin box-shadow-default(
+	$x: 0,
+	$y: 4px,
+	$blur: 20px,
+	$spread: 0px,
+	$color: rgba(0, 0, 0, 0.1)
+) {
+	box-shadow: $x $y $blur $spread $color;
+}
+@mixin desktop-content() {
+	margin: 0 auto;
+	padding: 1.6rem;
+
+	@include breakpoint(tab-port) {
+		max-width: 60rem;
+	}
+
+	@include breakpoint(tab-land) {
+		max-width: 70rem;
+	}
+
+	@include breakpoint(desktop) {
+		max-width: 80rem;
+	}
+}
+
+@mixin flex(
+	$flex-direction: row,
+	$justify-content: center,
+	$align-items: center
+) {
+	display: flex;
+	flex-direction: $flex-direction;
+	justify-content: $justify-content;
+	align-items: $align-items;
+}

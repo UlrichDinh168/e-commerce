@@ -1,0 +1,93 @@
+%share-input {
+	outline: none;
+	padding: 1.2rem 1.2rem;
+	color: black;
+	border-radius: $radius-default;
+	transition: all 0.2s;
+	background-color: $lighter-gray;
+	&:focus {
+		border: $border-active;
+	}
+}
+
+.input-field {
+	margin-bottom: 0.8rem;
+	position: relative;
+	width: 100%;
+
+	&.disabled {
+		&__input-content,
+		&__icon-container,
+		input {
+			cursor: not-allowed;
+		}
+	}
+
+	&.forgotPassword {
+		justify-content: center;
+		margin-top: 20px;
+	}
+
+	&__input-content {
+		display: flex;
+		align-items: center;
+	}
+
+	&__label {
+		margin-bottom: 0.4rem;
+		display: block;
+		color: $text-gray;
+		&.tooltip {
+			position: relative;
+			&.tooltip:hover {
+				.tooltiptext {
+					visibility: visible;
+				}
+			}
+		}
+		&.tooltip .tooltiptext {
+			position: absolute;
+			visibility: hidden;
+			background-color: black;
+			color: #fff;
+			text-align: center;
+			border-radius: 6px;
+			padding: 1rem;
+
+			/* Position the tooltip */
+			position: absolute;
+			z-index: 1;
+		}
+	}
+
+	input,
+	textarea {
+		@extend %share-input;
+		width: 100%;
+		$radius-small: 1rem;
+		border: none;
+		resize: none;
+
+		&:focus {
+			outline: none;
+		}
+	}
+
+	&__icon-container {
+		display: flex;
+		align-items: center;
+		position: absolute;
+		right: -30px;
+		span {
+			color: $green;
+			font-size: 2.8rem;
+			margin: 0 0.4rem;
+			cursor: pointer;
+		}
+	}
+
+	.error {
+		text-align: center;
+		margin-top: 0.4rem;
+	}
+}

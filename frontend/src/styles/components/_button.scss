@@ -1,0 +1,105 @@
+.button-container {
+	@include button-container-default;
+
+	button {
+		&.withBackground {
+			background: linear-gradient(270deg, #653488 0%, #46245e 100%);
+		}
+		@include button-default;
+		&.button-primary {
+			background-color: $primary;
+		}
+		&.button-secondary {
+			background-color: $secondary;
+		}
+		&.button-white {
+			background-color: $white;
+			color: $black;
+		}
+		&.button-icon-with-text {
+			background-color: transparent;
+			box-shadow: unset;
+			padding: unset;
+
+			.button-text,
+			.button-text.icon-start,
+			.button-text.icon-end {
+				margin: unset;
+				padding: unset;
+				min-width: unset;
+				display: flex;
+				align-items: center;
+				color: $black;
+
+				.icon {
+					width: 3.3rem;
+					height: 3.3rem;
+					border-radius: 50%;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					color: $white;
+					box-shadow: 0 0.5rem 1rem rgba($black, 0.15);
+
+					&.icon-primary {
+						background-color: $primary;
+					}
+					&.icon-secondary {
+						background-color: $secondary;
+					}
+					&.icon-transparent {
+						color: $black;
+						background-color: transparent;
+						box-shadow: unset;
+					}
+				}
+			}
+		}
+		&:disabled {
+			background-color: $gray;
+			color: $white;
+
+			&.button-icon-with-text {
+				background-color: transparent;
+				.button-text .icon,
+				.button-text.icon-start .icon,
+				.button-text.icon-end .icon {
+					background: $gray;
+					cursor: not-allowed;
+				}
+			}
+		}
+	}
+
+	.button-text {
+		@include button-text;
+
+		&.icon-end:not(.button-icon) {
+			margin-right: -1rem;
+			.icon {
+				margin-left: 1rem;
+			}
+		}
+		&.icon-start:not(.button-icon) {
+			margin-left: -1rem;
+			.icon {
+				margin-right: 1rem;
+			}
+		}
+
+		&.button-icon {
+			min-width: unset;
+			padding: 0.6rem;
+			.icon {
+			}
+		}
+	}
+
+	& .button-small {
+		.button-text {
+			font-size: $font-size-small;
+			min-width: 10rem;
+			padding: 0.5rem 2rem;
+		}
+	}
+}

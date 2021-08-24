@@ -1,0 +1,109 @@
+//
+// Typography
+//
+
+:root {
+	font-size: 62.5%; // 1rem = 10px // 10px/16px = 62.5%
+}
+
+* {
+	box-sizing: border-box;
+}
+
+// Make scrolling behaviors smooth on mobile devices
+body {
+	-webkit-overflow-scrolling: touch;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+p,
+span,
+ul,
+li,
+input,
+label,
+button {
+	font-family: 'Karla', sans-serif;
+	margin: 0;
+	display: block;
+}
+
+// Force our app to have default font size
+// So that UI library will not override it
+div,
+p,
+span,
+input,
+textarea,
+label,
+ul {
+	font-size: $font-size;
+	outline: none;
+}
+
+// MaterialUI Icons
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+i {
+	cursor: pointer;
+}
+
+// General error message
+.error {
+	color: $red;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	letter-spacing: 0.1rem;
+	text-transform: uppercase;
+	line-height: 1.25em;
+	font-family: $bebas-neue;
+}
+h1 {
+	font-size: 2.5 * $default-size;
+}
+h2 {
+	font-size: 2 * $default-size;
+}
+h3 {
+	font-size: 1.75 * $default-size;
+}
+h4 {
+	font-size: 1.5 * $default-size;
+}
+h5 {
+	font-size: 1.25 * $default-size;
+}
+h6 {
+	font-size: $default-size;
+}
+
+p,
+span,
+a {
+	letter-spacing: 0.05rem;
+}
+
+p {
+	margin-bottom: 1rem;
+}
+
+a {
+	text-decoration: none;
+	&:hover {
+		text-decoration: underline;
+		text-underline-position: under;
+	}
+}
