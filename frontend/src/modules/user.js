@@ -1,17 +1,17 @@
 /**
  * hook & utils for user
  *
- * @author Anh Tu Le <anh.le@vertics.co>
+ * @author Ulrich
  *
  * @copyright Vertics Oy 2021
  */
-import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 // reducers
-import { usersSelectors } from '../reducers'
+import { usersSelectors } from "../reducers";
 // actions
-import { usersActions } from '../actions'
-import { statusModule } from '../modules'
+import { usersActions } from "../actions";
+import { statusModule } from "../modules";
 
 /**
  * hook for getting user list
@@ -20,26 +20,28 @@ import { statusModule } from '../modules'
  *
  * @return {Array} a list of users fetched from the server
  */
-const useUsers = isBackground => {
-	const dispatch = useDispatch()
+const useUsers = (isBackground) => {
+  const dispatch = useDispatch();
 
-	const fetchedUsers = useSelector(state => {
-		return usersSelectors.getAll(state.users)
-	})
-	const status = useSelector(state => usersSelectors.getApiStatus(state.users))
+  const fetchedUsers = useSelector((state) => {
+    return usersSelectors.getAll(state.users);
+  });
+  const status = useSelector((state) =>
+    usersSelectors.getApiStatus(state.users)
+  );
 
-	const [users, setUsers] = React.useState(fetchedUsers)
+  const [users, setUsers] = React.useState(fetchedUsers);
 
-	React.useEffect(() => {
-		dispatch(usersActions.getAll(isBackground))
-	}, [])
+  React.useEffect(() => {
+    dispatch(usersActions.getAll(isBackground));
+  }, []);
 
-	React.useEffect(() => {
-		if (status === statusModule.status.resolved) {
-			setUsers(fetchedUsers)
-		}
-	}, [status, fetchedUsers])
-	return { users, status }
-}
+  React.useEffect(() => {
+    if (status === statusModule.status.resolved) {
+      setUsers(fetchedUsers);
+    }
+  }, [status, fetchedUsers]);
+  return { users, status };
+};
 
-export default { useUsers }
+export default { useUsers };
