@@ -3,9 +3,7 @@
  * Allows user to upload an attachment
  * Display file name and (image)
  *
- * @author Ulrich
  *
- * @copyright Vertics Oy 2021
  */
 
 import React from "react";

@@ -1,7 +1,6 @@
 /**
  * Generic select components
  *
- * @author Ulrich
  *
  */
 

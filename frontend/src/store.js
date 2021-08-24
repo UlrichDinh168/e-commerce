@@ -1,9 +1,5 @@
 /**
  * Configure redux store
- *
- * @author name <name@vertics.co>
- *
- * @copyright Vertics Co 2019
  */
 
 import { createStore, applyMiddleware, compose } from "redux";
@@ -25,9 +21,7 @@ import { apiSentryReport } from "helpers/api";
 // Create client alias
 // Used in action creators
 const client = axios.create({
-  baseURL:
-    process.env.BACKEND_BASE_URL ||
-    "https://development-backend-dot-vmit-300709.ey.r.appspot.com",
+  baseURL: process.env.BACKEND_BASE_URL || "http://localhost:3001",
   responseType: "json",
 });
 // Axios interceptor configs

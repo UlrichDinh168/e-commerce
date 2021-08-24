@@ -1,9 +1,7 @@
 /**
  * hook & utils for files
  *
- * @author Ulrich
  *
- * @copyright Vertics Oy 2021
  */
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";

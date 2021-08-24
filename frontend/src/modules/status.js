@@ -1,9 +1,7 @@
 /**
  * API Status module
  *
- * @author Ulrich
  *
- * @copyright Vertics Co 2020
  */
 const status = {
   idle: "idle",

@@ -1,9 +1,7 @@
 /**
  * Production webpack configuration
  *
- * @author Ulrich
  *
- * @copyright Vertics Co 2019
  */
 const merge = require("webpack-merge");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");

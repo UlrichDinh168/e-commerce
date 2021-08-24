@@ -1,9 +1,6 @@
 /**
  * Error boundary component
  * Catch JavaScript errors anywhere in their child component tree
- *
- * @author Tu Le <anh.le@vertics.co>
- *
  */
 import React from "react";
 import { connect } from "react-redux";
@@ -12,7 +9,7 @@ import { withTranslation } from "react-i18next";
 import * as Sentry from "@sentry/react";
 
 // component
-import Button from "shared/components/Button";
+import Button from "shared/Button";
 class ErrorBoundary extends React.Component {
   constructor(props) {
     super(props);

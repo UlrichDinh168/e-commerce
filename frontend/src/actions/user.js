@@ -1,9 +1,5 @@
 /**
  * User action creators
- *
- * @author Ulrich
- *
- * @copyright Vertics Co 2020
  */
 import { userTypes as types } from "./types";
 const register = (data) => ({

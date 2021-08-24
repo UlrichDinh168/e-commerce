@@ -1,9 +1,7 @@
 /**
  * Webpack config for building front-end in development
  *
- * @author Ulrich
  *
- * @copyright Vertics Co 2019
  */
 
 const path = require("path");
@@ -33,28 +31,28 @@ module.exports = (env = "development") =>
         ],
       },
       devServer: {
-        stats: {
-          colors: true,
-          hash: false,
-          version: false,
-          timings: true,
-          assets: false,
-          chunks: false,
-          modules: false,
-          reasons: false,
-          children: false,
-          source: true,
-          errors: true,
-          errorDetails: false,
-          warnings: false,
-          publicPath: false,
-        },
+        // stats: {
+        //   colors: true,
+        //   hash: false,
+        //   version: false,
+        //   timings: true,
+        //   assets: false,
+        //   chunks: false,
+        //   modules: false,
+        //   reasons: false,
+        //   children: false,
+        //   source: true,
+        //   errors: true,
+        //   errorDetails: false,
+        //   warnings: false,
+        //   publicPath: false,
+        // },
         // server default port
         port: 3001,
         historyApiFallback: true,
-        overlay: true,
         hot: true,
-        contentBase: path.resolve(__dirname, "../public/"),
+        // contentBase: path.resolve(__dirname, "./public/"),
+        static: "./public",
       },
       plugins: [
         new webpack.HotModuleReplacementPlugin(),

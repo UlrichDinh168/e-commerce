@@ -1,7 +1,6 @@
 /**
  * Generic Input component
  *
- * @author Ulrich
  *
  */
 

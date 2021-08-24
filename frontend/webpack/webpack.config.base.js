@@ -1,9 +1,7 @@
 /**
  * Common webpack configuration
  *
- * @author Ulrich
  *
- * @copyright Vertics Co 2019
  */
 
 const path = require("path");
@@ -29,6 +27,7 @@ module.exports = {
       actions: path.resolve(__dirname, "../src/actions"),
       reducers: path.resolve(__dirname, "../src/reducers"),
       hocs: path.resolve(__dirname, "../src/hocs"),
+      styles: path.resolve(__dirname, "../src/styles"),
       utils: path.resolve(__dirname, "../src/utils"),
       modules: path.resolve(__dirname, "../src/modules"),
       data: path.resolve(__dirname, "../src/data"),

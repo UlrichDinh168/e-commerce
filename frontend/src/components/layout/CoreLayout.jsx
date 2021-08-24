@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useLocation, useHistory } from "react-router-dom";
-import Snackbar from "shared/components/Snackbar";
+import Snackbar from "shared/Snackbar";
 import { useTranslation } from "react-i18next";
 // Actions
 import { userActions, notificationActions } from "../../../actions";

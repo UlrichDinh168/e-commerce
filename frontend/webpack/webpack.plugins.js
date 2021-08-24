@@ -1,7 +1,6 @@
 /**
  * Webpack plugins for production
  *
- * @author Ulrich
  *
  */
 const path = require("path");
