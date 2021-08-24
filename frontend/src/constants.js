@@ -1,4 +1,4 @@
-export default ROUTER_PATH = {
+export const ROUTER_PATH = {
   home: "/",
   userDetails: "/user_details",
 };
