@@ -3,7 +3,6 @@
  *
  * @author Ulrich
  *
- * @copyright Vertics Oy 2021
  */
 import React, { Fragment, useState } from "react";
 import { DatePicker, MuiPickersUtilsProvider } from "@material-ui/pickers";

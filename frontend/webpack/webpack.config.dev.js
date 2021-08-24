@@ -3,7 +3,6 @@
  *
  * @author Ulrich
  *
- * @copyright Vertics Co 2019
  */
 
 const path = require("path");

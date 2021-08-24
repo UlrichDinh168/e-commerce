@@ -3,7 +3,6 @@
  *
  * @author Ulrich
  *
- * @copyright Vertics Co 2020
  */
 
 import localStorageUtils from "./localStorage";

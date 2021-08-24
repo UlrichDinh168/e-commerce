@@ -1,9 +1,5 @@
 /**
  * Configure redux store
- *
- * @author name <name@vertics.co>
- *
- * @copyright Vertics Co 2019
  */
 
 import { createStore, applyMiddleware, compose } from "redux";

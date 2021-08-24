@@ -1,9 +1,5 @@
 /**
  * Root client file
- *
- * @author name <name@vertics.co>
- *
- * @copyright Vertics Oy 2020
  */
 
 // WORK INSTRUCTIONS:
@@ -28,6 +24,7 @@ import "styles/index.scss";
 
 // Components
 import App from "./App";
+
 if (process.env.NODE_ENV !== "development") {
   Sentry.init({
     dsn: "https://4a6bef314cc14c03a24cd10f9992cfcb@o381714.ingest.sentry.io/5661035",

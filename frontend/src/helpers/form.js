@@ -3,7 +3,6 @@
  *
  * @author Ulrich
  *
- * @copyright Vertics Oy 2021
  */
 import React from "react";
 // utils
@@ -11,15 +10,13 @@ import slug from "slug";
 // constanst
 import { regexOptions } from "../../src/constants";
 // components
-import Input from "../../src/shared/components/Input";
-import Checkbox from "../../src/shared/components/Checkbox";
-import Select from "../../src/shared/components/Select";
-import DatePicker from "../../src/shared/components/DatePicker";
-import RichText from "../../src/shared/components/RichText";
+import Input from "../../src/shared/Input";
+import Checkbox from "../../src/shared/Checkbox";
+import Select from "../../src/shared/Select";
+import DatePicker from "../../src/shared/DatePicker";
+import RichText from "../../src/shared/RichText";
 import { Controller } from "react-hook-form";
 import { Draggable } from "react-beautiful-dnd";
-import { convertToRaw, convertFromRaw } from "draft-js";
-import draftToHtml from "draftjs-to-html";
 
 const withControl = (component, onDelete, canDrag) => {
   return (

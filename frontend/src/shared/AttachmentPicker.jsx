@@ -5,7 +5,6 @@
  *
  * @author Ulrich
  *
- * @copyright Vertics Oy 2021
  */
 
 import React from "react";

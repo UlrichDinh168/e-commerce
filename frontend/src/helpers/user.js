@@ -3,7 +3,6 @@
  *
  * @author Ulrich
  *
- * @copyright Vertics Oy 2021
  */
 
 const isUserRoleValid = (userRoles, reqRoles) => {

@@ -1,9 +1,5 @@
 /**
  * Entry point for all actions
- *
- * @author name <name@vertics.co>
- *
- * @copyright Vertics Co 2019
  */
 
 import * as loginActions from "./login";
