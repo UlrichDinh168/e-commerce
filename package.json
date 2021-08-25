@@ -11,10 +11,12 @@
     "sass-loader": "^12.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "server": "nodemon server/server.js",
+    "client": "cd client && yarn start",
+    "start": "concurrently \"yarn run server\" \"yarn run client\"", 
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "data:import": "node server/seederScript.js"
   },
   "devDependencies": {
     "concurrently": "^6.2.1",
