@@ -3,6 +3,18 @@
   "version": "0.1.0",
   "main": "index.js",
   "private": true,
+  "scripts": {
+    "start": "yarn run dev",
+    "setup": "yarn install",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --config webpack/webpack.config.dev.js --open",
+    "build": "cross-env NODE_ENV=production webpack --config webpack/webpack.config.prod.js --color -p --progress --hide-modules --display-optimization-bailout",
+    "lint": "eslint --ext .jsx --ext .js src/",
+    "format": "yarn run prettier --write",
+    "validate": "yarn run lint && yarn run prettier --list-different",
+    "prettier": "prettier \"**/*.+(js|jsx|json|ts|tsx|css|scss|md|mdx|graphql)\"",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
   "dependencies": {
     "@babel/core": "^7.15.0",
     "@babel/plugin-transform-runtime": "^7.15.0",
@@ -36,17 +48,21 @@
     "style-loader": "^3.2.1",
     "web-vitals": "^2.1.0"
   },
-  "scripts": {
-    "start": "yarn run dev",
-    "setup": "yarn install",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --config webpack/webpack.config.dev.js --open",
-    "build": "cross-env NODE_ENV=production webpack --config webpack/webpack.config.prod.js --color -p --progress --hide-modules --display-optimization-bailout",
-    "lint": "eslint --ext .jsx --ext .js src/",
-    "format": "yarn run prettier --write",
-    "validate": "yarn run lint && yarn run prettier --list-different",
-    "prettier": "prettier \"**/*.+(js|jsx|json|ts|tsx|css|scss|md|mdx|graphql)\"",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+  "devDependencies": {
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "copy-webpack-plugin": "^9.0.1",
+    "html-webpack-plugin": "^5.3.2",
+    "mini-css-extract-plugin": "^2.2.0",
+    "optimize-css-assets-webpack-plugin": "^6.0.1",
+    "postcss-loader": "^6.1.1",
+    "postcss-preset-env": "^6.7.0",
+    "redux-logger": "^3.0.6",
+    "webpack": "^5.51.1",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-middleware": "^5.0.0",
+    "webpack-dev-server": "^4.0.0",
+    "webpack-hot-middleware": "^2.25.0",
+    "webpack-merge": "^5.8.0"
   },
   "eslintConfig": {
     "extends": [
@@ -65,21 +81,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "clean-webpack-plugin": "^4.0.0-alpha.0",
-    "copy-webpack-plugin": "^9.0.1",
-    "html-webpack-plugin": "^5.3.2",
-    "mini-css-extract-plugin": "^2.2.0",
-    "optimize-css-assets-webpack-plugin": "^6.0.1",
-    "postcss-loader": "^6.1.1",
-    "postcss-preset-env": "^6.7.0",
-    "redux-logger": "^3.0.6",
-    "webpack": "^5.51.1",
-    "webpack-cli": "^4.8.0",
-    "webpack-dev-middleware": "^5.0.0",
-    "webpack-dev-server": "^4.0.0",
-    "webpack-hot-middleware": "^2.25.0",
-    "webpack-merge": "^5.8.0"
   }
 }
