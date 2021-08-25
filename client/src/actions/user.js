@@ -2,7 +2,7 @@
  * User action creators
  */
 import { userTypes as types } from "./types";
-const register = (data) => ({
+export const register = (data) => ({
   type: types.register,
   payload: {
     request: {
@@ -13,7 +13,7 @@ const register = (data) => ({
   },
 });
 
-const updateUser = (id, data) => {
+export const updateUser = (id, data) => {
   return {
     type: types.updateUser,
     payload: {
@@ -26,7 +26,7 @@ const updateUser = (id, data) => {
   };
 };
 
-const forgotPassword = (data) => {
+export const forgotPassword = (data) => {
   return {
     type: types.forgotPassword,
     payload: {
@@ -39,7 +39,7 @@ const forgotPassword = (data) => {
   };
 };
 
-const setPassword = (data) => {
+export const setPassword = (data) => {
   return {
     type: types.setPassword,
     payload: {
@@ -52,7 +52,7 @@ const setPassword = (data) => {
   };
 };
 
-const getUser = () => {
+export const getUser = () => {
   return (dispatch) => {
     dispatch({
       type: types.getUser,
@@ -68,7 +68,7 @@ const getUser = () => {
     }, 500);
   };
 };
-const getNewAccessToken = (data) => {
+export const getNewAccessToken = (data) => {
   return {
     type: types.getNewAccessToken,
     payload: {
@@ -79,12 +79,4 @@ const getNewAccessToken = (data) => {
       },
     },
   };
-};
-export default {
-  getUser,
-  getNewAccessToken,
-  register,
-  updateUser,
-  forgotPassword,
-  setPassword,
 };

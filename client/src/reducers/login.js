@@ -35,8 +35,3 @@ export const loginReducer = (state = initialState, action) => {
       return state;
   }
 };
-
-export const loginSelectors = {
-  getLoading: (state = initialState) => state.loading,
-  getError: (state = initialState) => state.error,
-};

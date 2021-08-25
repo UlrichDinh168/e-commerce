@@ -3,7 +3,7 @@
  */
 
 import * as loginActions from "./login";
-import notificationActions from "./notification";
-import userActions from "./user";
+import * as notificationActions from "./notification";
+import * as userActions from "./user";
 
 export { loginActions, userActions, notificationActions };

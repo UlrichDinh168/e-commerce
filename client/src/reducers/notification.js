@@ -3,7 +3,7 @@
  *
  *
  */
-import { notificationTypes as types } from "../actions/types";
+import { notificationTypes as types } from "actions/types";
 import { errorUtils } from "utils";
 import { NOTIFICATION_TYPE, NOTIFICATION_DURATION } from "constants";
 
@@ -11,7 +11,6 @@ const initialState = {
   notification: null,
 };
 /**
- *
  *
  * @param {Object}
  *
@@ -47,8 +46,4 @@ export const notificationReducer = (state = initialState, action) => {
     default:
       return state;
   }
-};
-
-export const notificationSelectors = {
-  getNotification: (state = initialState) => state.notification,
 };
