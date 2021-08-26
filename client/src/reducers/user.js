@@ -1,7 +1,7 @@
 /**
  * User reducer
  */
-import { loginTypes, userTypes } from "../actions/types";
+import { loginTypes, userTypes } from "actions/types";
 
 const initialState = {
   user: null,

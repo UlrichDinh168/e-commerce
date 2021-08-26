@@ -3,7 +3,7 @@
  *
  *
  */
-import { loginTypes as types } from "../actions/types";
+import { loginTypes as types } from "actions/types";
 
 const initialState = {
   loading: true,
