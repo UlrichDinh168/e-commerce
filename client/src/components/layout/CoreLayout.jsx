@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
 import Snackbar from "shared/Snackbar";
@@ -17,22 +17,25 @@ const CoreLayout = ({ children }) => {
   const location = useLocation();
   const user = useSelector((state) => state.user.user);
   const loading = useSelector((state) => state.user.loading);
+  const [openDrawer, setOpenDrawer] = useState(false);
 
   const { isAuthenticated } = useAuthorization();
-  React.useEffect(() => {
+  useEffect(() => {
     if (isAuthenticated && !user) {
       dispatch(userActions.getUser());
     }
   }, []);
-
+  const onToggleDrawer = () => {
+    setOpenDrawer(!openDrawer);
+  };
   const isLogin = location.pathname.startsWith("/login");
 
   return (
     <AuthorizationContext.Provider value={{ user, loading }}>
       <div className="core-layout">
-        <Nav />
+        <Nav openDrawer={openDrawer} onToggleDrawer={onToggleDrawer} />
 
-        <main>{children}</main>
+        <main onClick={onToggleDrawer}>{children}</main>
         <Snackbar />
       </div>
     </AuthorizationContext.Provider>
