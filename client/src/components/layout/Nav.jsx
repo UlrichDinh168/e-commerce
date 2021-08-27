@@ -6,6 +6,7 @@
  */
 import React, { useState, useEffect, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 // Actions
 import { loginActions } from "actions";
@@ -16,8 +17,9 @@ import { logo, bg, menu, close } from "assets";
 import { ROUTER_PATH, USER_ROLE } from "constants";
 import { useHistory } from "react-router-dom";
 
-const Nav = ({ openDrawer = false, onToggleDrawer }) => {
+const Nav = ({ openDrawer, onToggleDrawer }) => {
   const history = useHistory();
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const wrapperRef = useRef(null);
 
@@ -28,17 +30,13 @@ const Nav = ({ openDrawer = false, onToggleDrawer }) => {
   const [width, setWidth] = useState(window.innerWidth);
   const [offset, setOffset] = useState(0);
 
-  useOnClickOutside(wrapperRef, () => {
-    if (openDrawer) {
-      onToggleDrawer();
-    }
-  });
-
   useEffect(() => {
     window.onscroll = () => {
       setOffset(window.pageYOffset);
     };
   }, []);
+
+  const isMobile = width <= 900 ? true : false;
 
   useEffect(() => {
     const handleWindowResize = () => setWidth(window.innerWidth);
@@ -53,14 +51,8 @@ const Nav = ({ openDrawer = false, onToggleDrawer }) => {
   }, [history.location.pathname]);
 
   useEffect(() => {
-    if (width > 900) setOpenDrawer(false);
+    if (width > 900) return onToggleDrawer(false);
   }, [width]);
-
-  const signOut = () => {
-    dispatch(loginActions.logout());
-    localStorage.removeItem("refreshToken");
-    history.push(ROUTER_PATH.LOGIN);
-  };
 
   const navigateTo = (path) => {
     let navigationLocation = path;
@@ -76,6 +68,12 @@ const Nav = ({ openDrawer = false, onToggleDrawer }) => {
     } else {
       history.push(navigationLocation);
     }
+  };
+
+  const signOut = () => {
+    dispatch(loginActions.logout());
+    localStorage.removeItem("refreshToken");
+    history.push(ROUTER_PATH.LOGIN);
   };
 
   const renderNavItem = ({ path, iconClassName, name, popupItems }) => (
@@ -146,25 +144,24 @@ const Nav = ({ openDrawer = false, onToggleDrawer }) => {
       popupItems: [],
     },
   ];
-
   return (
     <header className={offset > 0 ? "sticky" : ""}>
       <img src={bg} alt="background" className="banner" />
       <a href="#" className="logo">
         Brand.
       </a>
-      <div className="toggle" onClick={onToggleDrawer} ref={wrapperRef}>
-        {!openDrawer ? (
+      <div className="toggle" onClick={onToggleDrawer} e>
+        {openDrawer ? (
           <i className="fas fa-align-justify"></i>
         ) : (
           <i className="fas fa-times"></i>
         )}
       </div>
-      <nav className={!openDrawer ? "" : "active"}>
+      <nav>
         <div
           className={`container ${
             userRole === USER_ROLE.PLATER ? "user" : null
-          }`}
+          } ${!openDrawer ? "" : " inactive"}`}
         >
           {user.role === USER_ROLE.ADMIN || user.role === undefined
             ? navigationItemsUser.map(renderNavItem)

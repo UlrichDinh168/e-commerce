@@ -35,7 +35,7 @@ const CoreLayout = ({ children }) => {
       <div className="core-layout">
         <Nav openDrawer={openDrawer} onToggleDrawer={onToggleDrawer} />
 
-        <main onClick={onToggleDrawer}>{children}</main>
+        <main onClick={() => setOpenDrawer(false)}>{children}</main>
         <Snackbar />
       </div>
     </AuthorizationContext.Provider>

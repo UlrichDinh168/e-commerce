@@ -35,9 +35,7 @@ header {
     }
     nav {
       .container {
-        transform: translateX(0);
-        opacity: 1;
-        transition-delay: 0.8s;
+        transform: translateY(0);
         opacity: 1;
         visibility: visible;
       }
@@ -63,8 +61,8 @@ nav {
   .container {
     position: relative;
     display: flex;
-    transition: 0.25s;
-    transform: translateX(100px);
+    // transition: 0.25s;
+    // transform: translateY(100px);
     opacity: 0;
     .nav__item-container {
       display: inline-block;
@@ -79,7 +77,12 @@ nav {
   }
 }
 
-@media (max-width: 991px) {
+@media screen and (max-width: 900px) {
+  .inactive {
+    // height: 0 !important;
+    visibility: hidden !important;
+    top: 80px !important;
+  }
   header {
     &.sticky {
       // & nav {
@@ -91,46 +94,43 @@ nav {
       .banner {
         opacity: 0;
       }
-      .toggle {
-        position: fixed;
-        top: 18px;
-        right: 23px;
-        width: 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 40px;
-        cursor: pointer;
-        background: #fff;
-        background-size: 25px;
-        background-repeat: no-repeat;
-        background-position: center;
-        padding: 0 2rem;
-        transition: 0.5s ease-in;
-      }
+    }
+    .toggle {
+      position: fixed;
+      top: 18px;
+      right: 23px;
+      width: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 40px;
+      cursor: pointer;
+      background: #fff;
+      background-size: 25px;
+      background-repeat: no-repeat;
+      background-position: center;
+      padding: 0 2rem;
     }
   }
   nav {
+    // &.container {
+    //   opacity: 0;
+    //   visibility: hidden;
+    // }
     .container {
-      display: none;
-      // opacity: 0;
-      // visibility: hidden;
-    }
-    &.active {
-      .container {
-        position: fixed;
-        top: 80px;
-        left: 0;
-        width: 100%;
-        height: calc(100%-80px);
-        background: #000;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        // opacity: 1;
-        // visibility: visible;
-      }
+      position: fixed;
+      top: 80px;
+      left: 0;
+      width: 100vw;
+      height: 80vh;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      transition: top 0.5s ease-out;
+      align-items: center;
+      flex-direction: column;
+      // opacity: 1;
+      // visibility: visible;
     }
   }
 }
