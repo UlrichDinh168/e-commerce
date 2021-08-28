@@ -1,7 +1,5 @@
 /**
  * Login reducer
- *
- *
  */
 import { loginTypes as types } from "actions/types";
 

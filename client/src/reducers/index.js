@@ -16,6 +16,7 @@ import { PERSIST_KEY } from "constants";
 import { loginReducer } from "./login";
 import { notificationReducer } from "./notification";
 import { userReducer } from "./user";
+import { cartReducer } from "./cart";
 
 // export root reducer
 const index = combineReducers({
@@ -23,6 +24,7 @@ const index = combineReducers({
   login: loginReducer,
   notification: notificationReducer,
   user: userReducer,
+  cart: cartReducer,
 });
 export default (state, action) => {
   if (
