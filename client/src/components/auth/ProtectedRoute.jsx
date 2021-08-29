@@ -1,59 +1,74 @@
+/**
+ * Protected route
+ * Only let user access the route if user has been authenticated
+ * Otherwise redirect user to login page
+ *
+ * @author Oskari Samiola <oskari@vertics.co>
+ *
+ * @copyright Vertics Co 2021
+ */
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import ErrorBoundary from "shared/ErrorBoundary";
+import { useSelector, useDispatch } from "react-redux";
+
 import { useAuthorization, authorizedState } from "hooks";
-import { ROUTER_PATH } from "constants";
+import { userUtils } from "helpers";
+// constanst
+import { GROUP_VALUES } from "constants";
+// reducer
+import { userActions } from "actions";
+
 // Wrap title and meta data to Component
-const withHelmet = () => {
+const withHelmet = (component, title) => (
   <>
     <Helmet>
       <title>{title}</title>
-      <meta name="description" content={`${title}`} />
+      <meta name="description" content={`Vertics Boilerplate |${title}`} />
     </Helmet>
-  </>;
-};
+    {component}
+  </>
+);
 
 const ProtectedRoute = ({
   component: Component,
   title,
-  unAuthenticaredRedirect = ROUTER_PATH.HOME,
-  unAuthorizedRedirect = "/no-service",
-  protectedRoles,
+  groups = [GROUP_VALUES.admin],
+  unauthorizedRedirect = "/login",
   ...rest
 }) => {
-  const userRole = useSelector((state) => userSelectors.getRole(state.user));
   const { isAuthorized, isAuthenticated } = useAuthorization();
+  const user = useSelector((state) => userActions.getUser(state.user));
 
-  if (
-    protectedRoles &&
-    protectedRoles.length > 0 &&
-    protectedRoles.every((role) => role !== userRole)
-  ) {
-    const redirectRoute = userModule.getRedirectAuthenticatedRoute(userRole);
-    return <Redirect to={redirectRoute} />;
+  if (!isAuthenticated) {
+    return <Redirect to={unauthorizedRedirect} />;
   }
-
-  if (!isAuthenticated) return <Redirect to={unAuthenticaredRedirect} />;
 
   switch (isAuthorized) {
     case authorizedState.idle:
       return null;
 
     case authorizedState.pending:
-      return <p>Loading...</p>;
+      return "Loading";
 
     case authorizedState.rejected:
       return <Redirect to={unauthorizedRedirect} />;
   }
-  return (
-    <ErrorBoundary>
+
+  if (
+    groups &&
+    groups.length &&
+    userUtils.isUserRoleValid(user.groups, groups)
+  ) {
+    return (
       <Route
         {...rest}
         render={(props) => withHelmet(<Component {...props} />, title)}
       />
-    </ErrorBoundary>
-  );
+    );
+  }
+  const unAuthorizeRedirect = userUtils.getUnAuthorizeUserRedirect();
+  return <Redirect to={unAuthorizeRedirect} />;
 };
 
 export default ProtectedRoute;

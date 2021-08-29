@@ -45,7 +45,7 @@ export const ggLogin = (googleToken) => ({
     },
   },
 });
-export const Logout = () => ({
+export const logout = () => ({
   type: types.logout,
   payload: {
     request: {

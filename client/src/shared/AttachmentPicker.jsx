@@ -8,7 +8,7 @@
 
 import React from "react";
 // component
-import { userUtils } from "./../../helpers";
+import { userUtils } from "helpers";
 function AttachmentPicker({
   reference,
   label = "File upload",

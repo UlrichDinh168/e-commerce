@@ -3,20 +3,14 @@
 //
 
 // Font
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700');
+@import url("https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
 // MaterialUI Icons
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
 // Setting
-$default-size: 1.6rem;
-
-// Color
-$primary: #fc4f00;
-$secondary: #00325a;
-
-$white: #fff;
-$black: #000;
-
+$normalize-size: 1rem;
+$default-size: 1.6 * $normalize-size;
 // Material UI color
 $red: #f44336;
 $pink: #e91e63;
@@ -50,10 +44,24 @@ $dark-alto-gray: #d7d7d7;
 $white-gray: #ededed;
 $darker-white: #f5f5f5;
 
+// Color
+$primary: #28ca86;
+$light-primary: #e0f8ee;
+$secondary: #00325a;
+$primary-2nd: #15c0bb;
+$blue: #b6ccdf;
+$login-bg-color: #e0f8ee;
+$placeholder-gray: #d5d5d5;
+$default-text-color: #615a66;
+$white: #fff;
+$black: #000;
+$light-blue: #bdd4e8;
+$dark-blue: #446a8a;
+
 // Font-family
-$bebas-neue: 'bebas-neue';
-$montserrat: 'Montserrat';
-$font-1: $bebas-neue;
+$quicksand: "Quicksand";
+$montserrat: "Montserrat", sans-serif;
+$font-1: $quicksand;
 $font-2: $montserrat;
 
 // Font-size
@@ -65,10 +73,12 @@ $font-multiplier-large: 1.125;
 $font-size-large: $font-size * $font-multiplier-large;
 $font-multiplier-small: 0.6875;
 $font-size-small: $font-size * $font-multiplier-small;
-$font-multiplier-header: 1.4;
+$font-multiplier-header: 1.6;
 $font-size-header: $font-size * $font-multiplier-header;
 $font-multiplier-sub-header: 1.25;
 $font-size-sub-header: $font-size * $font-multiplier-sub-header;
+$font-size-icon-multiplier: 2.5;
+$font-size-icon: $font-size-icon-multiplier * $font-size;
 
 // Font-weight
 $font-thin: 200;
@@ -80,6 +90,46 @@ $font-bolder: 800;
 // Transition
 $transition-default: all 0.4s;
 
-// border-radius
-$radius-default: 5px;
-$radius-medium: 10px;
+// padding,margin
+$padding-extra-large: 10 * $normalize-size;
+$padding-large: 5 * $normalize-size;
+$padding-medium: 3 * $normalize-size;
+$padding-medium-small: 1.5 * $normalize-size;
+$padding-small: $normalize-size;
+$padding-smaller: 0.75 * $normalize-size;
+$padding-tiny: 3.5 * $normalize-size;
+
+//border radius
+$round-border: 50%;
+$small-border: $normalize-size;
+
+//input
+$input-height: 3.6 * $normalize-size;
+
+$logo-size: 7 * $normalize-size;
+$price-container-height: 9 * $normalize-size;
+$border-size: 0.15 * $normalize-size;
+$border-size-thick: 0.3 * $normalize-size;
+
+$button-min-width: 20 * $normalize-size;
+$small-button-min-width: 10 * $normalize-size;
+
+$min-width-modal: 40vw;
+
+$switch-height: 3.73 * $normalize-size;
+
+$suggestion-estimate-width: 15 * $normalize-size;
+
+$bg-opacity: 0.8;
+$bg-opacity-light: 0.35;
+
+$logo-height: 5 * $normalize-size;
+$bg-center-size: 130vh;
+$nav-height: 10 * $normalize-size;
+
+$box-width: 77 * $normalize-size;
+$box-top-height: 12 * $normalize-size;
+$box-bottom-height: 7 * $normalize-size;
+
+$position-top-element: 15 * $normalize-size;
+$body-width-desktop: 55vw;

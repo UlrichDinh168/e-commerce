@@ -29,7 +29,6 @@ module.exports = {
       hocs: path.resolve(__dirname, "../src/hocs"),
       styles: path.resolve(__dirname, "../src/styles"),
       utils: path.resolve(__dirname, "../src/utils"),
-      modules: path.resolve(__dirname, "../src/modules"),
       data: path.resolve(__dirname, "../src/data"),
     },
   },
@@ -43,7 +42,7 @@ module.exports = {
         },
       },
       {
-        test: /\.(png|jpg|gif)$/i,
+        test: /\.(png|jpe?g|gif)$/i,
         exclude: /node_modules/,
         use: [
           {
@@ -55,7 +54,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(eot|otf|ttf|woff|woff2)$/,
+        test: /\.(eot|otf|ttf|woff|woff2|jpe?g)$/,
         use: "file-loader",
       },
       {
