@@ -1,9 +1,7 @@
 /**
  * Login reducer
- *
- *
  */
-import { loginTypes as types } from "../actions/types";
+import { loginTypes as types } from "actions/types";
 
 const initialState = {
   loading: true,
@@ -34,9 +32,4 @@ export const loginReducer = (state = initialState, action) => {
     default:
       return state;
   }
-};
-
-export const loginSelectors = {
-  getLoading: (state = initialState) => state.loading,
-  getError: (state = initialState) => state.error,
 };

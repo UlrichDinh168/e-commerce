@@ -3,11 +3,10 @@ import { useSelector, useDispatch } from "react-redux";
 import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
 //reducer
-import { notificationSelectors, appStateSelectors } from "reducers";
 //actions
 import { notificationActions } from "actions";
 
-export const Snackbar = () => {
+export default function SimpleSnackbar() {
   const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
   const notification = useSelector((state) => state.notification.notification);
@@ -32,7 +31,7 @@ export const Snackbar = () => {
       </Snackbar>
     </div>
   );
-};
+}
 
 const Alert = (props) => {
   return <MuiAlert elevation={6} variant="filled" {...props} />;

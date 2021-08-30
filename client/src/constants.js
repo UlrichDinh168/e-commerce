@@ -5,6 +5,10 @@ export const ROUTER_PATH = {
 
 export const PERSIST_KEY = "root";
 
+export const USER_ROLE = {
+  USER: "USER",
+  ADMIN: "ADMIN",
+};
 // notification
 export const NOTIFICATION_DURATION = 1500;
 export const NOTIFICATION_TYPE = {
@@ -15,3 +19,12 @@ export const NOTIFICATION_TYPE = {
 };
 
 export const MESSAGE_CODE = {};
+
+export const GROUP_VALUES = {
+  propertyManager: 0,
+  contractor: 1,
+  chairman: 2,
+  homeowner: 3,
+  staff: 4,
+  admin: 5,
+};

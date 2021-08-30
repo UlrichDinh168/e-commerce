@@ -13,13 +13,15 @@
   "scripts": {
     "server": "nodemon server/server.js",
     "client": "cd client && yarn start",
-    "start": "concurrently \"yarn run server\" \"yarn run client\"", 
+    "start": "concurrently \"yarn run server\" \"yarn run client\"",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "data:import": "node server/seederScript.js"
   },
   "devDependencies": {
     "concurrently": "^6.2.1",
-    "nodemon": "^2.0.12"
+    "file-loader": "^6.2.0",
+    "nodemon": "^2.0.12",
+    "url-loader": "^4.1.1"
   }
 }

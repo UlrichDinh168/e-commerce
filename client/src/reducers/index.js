@@ -13,14 +13,18 @@ import { loginTypes as types } from "actions/types";
 import storage from "redux-persist/es/storage";
 import { PERSIST_KEY } from "constants";
 // Login
-import { loginReducer, loginSelectors } from "./login";
-import { notificationReducer, notificationSelectors } from "./notification";
+import { loginReducer } from "./login";
+import { notificationReducer } from "./notification";
+import { userReducer } from "./user";
+import { cartReducer } from "./cart";
 
 // export root reducer
 const index = combineReducers({
   router: connectRouter(history),
   login: loginReducer,
   notification: notificationReducer,
+  user: userReducer,
+  cart: cartReducer,
 });
 export default (state, action) => {
   if (
@@ -34,6 +38,3 @@ export default (state, action) => {
 };
 // export history
 export { history };
-
-// export getters/ selectors
-export { loginSelectors, notificationSelectors };

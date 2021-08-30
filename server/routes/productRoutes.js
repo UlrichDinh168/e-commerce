@@ -9,11 +9,11 @@ const {
 //@desc GET all products from database
 //@route GET /api/products
 //@access Public
-router.get("/", getAllProducts);
+router.get("/products", getAllProducts);
 
 //@desc GET a product by id from database
-//@route GET /api/products/:id
+//@route GET /api/product/:id
 //@access Public
-router.get("/:id", getProductById);
+router.get("/product/:id", getProductById);
 
 module.exports = router;

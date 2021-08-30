@@ -9,6 +9,8 @@ import ProtectedRoute from "./components/auth/ProtectedRoute";
 import { ROUTER_PATH, USER_ROLE } from "./constants";
 import { Helmet } from "react-helmet";
 import Loading from "shared/LoadingIndicator";
+import Nav from "./components/layout/Nav";
+import CoreLayout from "./components/layout/CoreLayout";
 
 const Home = lazy(() => import(/* webpackChunkName: "Home" */ "./pages/Home"));
 const App = ({ isAuthenticated }) => {
@@ -43,10 +45,12 @@ const AuthenticatedRoutes = () => {
 
 const UnauthenticatedRoutes = () => {
   return (
-    <Switch>
-      <Route exact path={ROUTER_PATH.HOME} component={Home} />
-      <Redirect to={ROUTER_PATH.HOME} />
-    </Switch>
+    <CoreLayout>
+      <Switch>
+        <Route exact path={ROUTER_PATH.HOME} component={Home} />
+        <Redirect to={ROUTER_PATH.HOME} />
+      </Switch>
+    </CoreLayout>
   );
 };
 export default App;
