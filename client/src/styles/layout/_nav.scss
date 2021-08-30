@@ -30,7 +30,7 @@ header {
       transform: translate(-50%, -50%);
     }
     .banner {
-      opacity: 0.5;
+      opacity: 0;
       transition: 1s ease-in;
     }
     nav {
@@ -58,11 +58,11 @@ nav {
   position: relative;
   display: flex;
   z-index: 1;
+  transition: 0.5s ease;
   .container {
     position: relative;
     display: flex;
-    // transition: 0.25s;
-    // transform: translateY(100px);
+    transition: 0.25s ease-out;
     opacity: 0;
     .nav__item-container {
       display: inline-block;
@@ -81,7 +81,6 @@ nav {
   .inactive {
     // height: 0 !important;
     visibility: hidden !important;
-    top: 80px !important;
   }
   header {
     &.sticky {
@@ -91,9 +90,6 @@ nav {
       //     visibility: visible;
       //   }
       // }
-      .banner {
-        opacity: 0;
-      }
     }
     .toggle {
       position: fixed;
@@ -110,6 +106,10 @@ nav {
       background-repeat: no-repeat;
       background-position: center;
       padding: 0 2rem;
+      transition: 0.1s ease-out;
+      &:hover {
+        opacity: 0.8;
+      }
     }
   }
   nav {
@@ -126,9 +126,9 @@ nav {
       background: #000;
       display: flex;
       justify-content: center;
-      transition: top 0.5s ease-out;
       align-items: center;
       flex-direction: column;
+      transition: 0.25s ease-out;
       // opacity: 1;
       // visibility: visible;
     }

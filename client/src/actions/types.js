@@ -69,3 +69,13 @@ export const cartTypes = {
   removeProductFromCartSuccess: "CART_PRODUCT_REMOVE_SUCCESS",
   removeProductFromCartFail: "CART_PRODUCT_REMOVE_FAIL",
 };
+
+export const productTypes = {
+  getAllProducts: "PRODUCTS_GET_ALL",
+  getAllProductsSuccess: "PRODUCTS_GET_ALL_SUCCESS",
+  getAllProductsFail: "PRODUCTS_GET_ALL_FAIL",
+
+  getProductById: "PRODUCT_GET_ALL_BY_ID",
+  getProductByIdSuccess: "PRODUCT_GET_ALL_BY_ID_SUCCESS",
+  getProductByIdFail: "PRODUCT_GET_ALL_BY_ID_FAIL",
+};

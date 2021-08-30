@@ -10,14 +10,14 @@ import { useTranslation } from "react-i18next";
 
 // Actions
 import { loginActions } from "actions";
-import useOnClickOutside from "hooks/useOnClickOutside";
+import { useOnClickOutside } from "hooks";
 
 // Assets
 import { logo, bg, menu, close } from "assets";
 import { ROUTER_PATH, USER_ROLE } from "constants";
 import { useHistory } from "react-router-dom";
 
-const Nav = ({ openDrawer, onToggleDrawer }) => {
+const Nav = () => {
   const history = useHistory();
   const { t } = useTranslation();
   const dispatch = useDispatch();
@@ -25,6 +25,7 @@ const Nav = ({ openDrawer, onToggleDrawer }) => {
 
   const user = useSelector((state) => state.user);
   const userRole = useSelector((state) => state.user.role);
+  const [openDrawer, setOpenDrawer] = useState(true);
 
   const [currentPath, setCurrentPath] = useState(history.location.pathname);
   const [width, setWidth] = useState(window.innerWidth);
@@ -36,8 +37,16 @@ const Nav = ({ openDrawer, onToggleDrawer }) => {
     };
   }, []);
 
+  useOnClickOutside(wrapperRef, () => {
+    if (openDrawer) {
+      setOpenDrawer(false);
+      console.log("clicked");
+    }
+  });
   const isMobile = width <= 900 ? true : false;
-
+  const onToggleDrawer = () => {
+    setOpenDrawer(!openDrawer);
+  };
   useEffect(() => {
     const handleWindowResize = () => setWidth(window.innerWidth);
     window.addEventListener("resize", handleWindowResize);
@@ -145,13 +154,13 @@ const Nav = ({ openDrawer, onToggleDrawer }) => {
     },
   ];
   return (
-    <header className={offset > 0 ? "sticky" : ""}>
+    <header ref={wrapperRef} className={offset > 0 ? "sticky" : ""}>
       <img src={bg} alt="background" className="banner" />
       <a href="#" className="logo">
         Brand.
       </a>
-      <div className="toggle" onClick={onToggleDrawer} e>
-        {openDrawer ? (
+      <div className="toggle" onClick={onToggleDrawer}>
+        {!openDrawer ? (
           <i className="fas fa-align-justify"></i>
         ) : (
           <i className="fas fa-times"></i>
@@ -161,7 +170,7 @@ const Nav = ({ openDrawer, onToggleDrawer }) => {
         <div
           className={`container ${
             userRole === USER_ROLE.PLATER ? "user" : null
-          } ${!openDrawer ? "" : " inactive"}`}
+          } ${openDrawer ? "" : " inactive"}`}
         >
           {user.role === USER_ROLE.ADMIN || user.role === undefined
             ? navigationItemsUser.map(renderNavItem)
