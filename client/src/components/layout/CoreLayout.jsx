@@ -30,7 +30,6 @@ const CoreLayout = ({ children }) => {
     <AuthorizationContext.Provider value={{ user, loading }}>
       <div className="core-layout">
         <Nav />
-
         <main onClick={() => setOpenDrawer(false)}>{children}</main>
         <Snackbar />
       </div>
