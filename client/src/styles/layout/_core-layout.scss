@@ -1,19 +1,20 @@
 // Core layout stylesheet
 
 #app {
-	height: 100vh;
-	display: flex;
-	flex-direction: column;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 
-	main {
-		position: relative;
-		overflow-y: auto;
-		flex: 1;
-		width: 90%;
-		margin: 1.2rem auto;
-	}
-	footer {
-		background: #f8e5e5;
-		padding: 1.2rem;
-	}
+  main {
+    position: relative;
+    overflow-y: auto;
+    flex: 1;
+    top: 8rem;
+    z-index: -2;
+    margin: 2rem;
+  }
+  footer {
+    background: #f8e5e5;
+    padding: 1.2rem;
+  }
 }

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
 import Snackbar from "shared/Snackbar";
-import { useTranslation } from "react-i18next";
 // Actions
 import { userActions } from "actions";
 
@@ -17,7 +16,6 @@ const CoreLayout = ({ children }) => {
   const location = useLocation();
   const user = useSelector((state) => state.user.user);
   const loading = useSelector((state) => state.user.loading);
-  const [openDrawer, setOpenDrawer] = useState(false);
 
   const { isAuthenticated } = useAuthorization();
   useEffect(() => {
@@ -25,16 +23,13 @@ const CoreLayout = ({ children }) => {
       dispatch(userActions.getUser());
     }
   }, []);
-  const onToggleDrawer = () => {
-    setOpenDrawer(!openDrawer);
-  };
+
   const isLogin = location.pathname.startsWith("/login");
 
   return (
     <AuthorizationContext.Provider value={{ user, loading }}>
       <div className="core-layout">
-        <Nav openDrawer={openDrawer} onToggleDrawer={onToggleDrawer} />
-
+        <Nav />
         <main onClick={() => setOpenDrawer(false)}>{children}</main>
         <Snackbar />
       </div>

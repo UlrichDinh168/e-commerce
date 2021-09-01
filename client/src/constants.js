@@ -1,6 +1,8 @@
 export const ROUTER_PATH = {
   HOME: "/",
   USER_DETAILS: "/user_details",
+  PRODUCT: "/products",
+  PRODUCT_DETALS: "/products/:id",
 };
 
 export const PERSIST_KEY = "root";

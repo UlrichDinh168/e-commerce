@@ -6,38 +6,46 @@
  */
 import React, { useState, useEffect, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useTranslation } from "react-i18next";
 
 // Actions
 import { loginActions } from "actions";
-import useOnClickOutside from "hooks/useOnClickOutside";
-
+import { useOnClickOutside } from "hooks";
+import { usePrevious } from "hooks/auth";
 // Assets
 import { logo, bg, menu, close } from "assets";
 import { ROUTER_PATH, USER_ROLE } from "constants";
 import { useHistory } from "react-router-dom";
 
-const Nav = ({ openDrawer, onToggleDrawer }) => {
+const Nav = () => {
   const history = useHistory();
-  const { t } = useTranslation();
   const dispatch = useDispatch();
   const wrapperRef = useRef(null);
 
   const user = useSelector((state) => state.user);
+
   const userRole = useSelector((state) => state.user.role);
+  const [openDrawer, setOpenDrawer] = useState(false);
+  const [width, setWidth] = useState(window.innerWidth);
 
   const [currentPath, setCurrentPath] = useState(history.location.pathname);
-  const [width, setWidth] = useState(window.innerWidth);
   const [offset, setOffset] = useState(0);
 
   useEffect(() => {
     window.onscroll = () => {
       setOffset(window.pageYOffset);
     };
-  }, []);
+  }, [offset]);
 
-  const isMobile = width <= 900 ? true : false;
+  useOnClickOutside(wrapperRef, () => {
+    if (!openDrawer) {
+      setOpenDrawer(false);
+      console.log("clicked");
+    }
+  });
 
+  const onToggleDrawer = () => {
+    setOpenDrawer(!openDrawer);
+  };
   useEffect(() => {
     const handleWindowResize = () => setWidth(window.innerWidth);
     window.addEventListener("resize", handleWindowResize);
@@ -45,6 +53,10 @@ const Nav = ({ openDrawer, onToggleDrawer }) => {
       return () => window.removeEventListener("resize", handleWindowResize);
     };
   }, []);
+
+  useEffect(() => {
+    if (offset > 0) setOpenDrawer(true);
+  }, [offset]);
 
   useEffect(() => {
     setCurrentPath(history.location.pathname);
@@ -145,23 +157,25 @@ const Nav = ({ openDrawer, onToggleDrawer }) => {
     },
   ];
   return (
-    <header className={offset > 0 ? "sticky" : ""}>
+    <header ref={wrapperRef} className={offset > 0 ? "sticky" : ""}>
       <img src={bg} alt="background" className="banner" />
       <a href="#" className="logo">
         Brand.
       </a>
-      <div className="toggle" onClick={onToggleDrawer} e>
-        {openDrawer ? (
-          <i className="fas fa-align-justify"></i>
-        ) : (
-          <i className="fas fa-times"></i>
-        )}
-      </div>
+      {offset > 0 && (
+        <div className="toggle" onClick={onToggleDrawer}>
+          {openDrawer ? (
+            <i className="fas fa-align-justify"></i>
+          ) : (
+            <i className="fas fa-times"></i>
+          )}
+        </div>
+      )}
       <nav>
         <div
           className={`container ${
             userRole === USER_ROLE.PLATER ? "user" : null
-          } ${!openDrawer ? "" : " inactive"}`}
+          } ${openDrawer ? "" : "inactive"}`}
         >
           {user.role === USER_ROLE.ADMIN || user.role === undefined
             ? navigationItemsUser.map(renderNavItem)

@@ -1,10 +1,11 @@
 /**
+ * Created by Hai Anh on 5/4/20
  */
 
 import React from "react";
 import hoistNonReactStatics from "hoist-non-react-statics";
 
-import { css } from "@emotion/react";
+import { css } from "@emotion/core";
 import PuffLoader from "react-spinners/PuffLoader";
 
 import Modal from "./Modal";
