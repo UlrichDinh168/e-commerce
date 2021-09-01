@@ -32,6 +32,6 @@ export const productReducer = (state = initialState, action) => {
         loading: false,
       };
     default:
-      break;
+      return state;
   }
 };

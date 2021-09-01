@@ -5,7 +5,7 @@ import React from "react";
  * @param {any} value value that we want to keep track
  * @returns {any}
  */
-const usePrevious = (value) => {
+export const usePrevious = (value) => {
   const ref = React.useRef();
 
   React.useEffect(() => {

@@ -17,6 +17,7 @@ import { loginReducer } from "./login";
 import { notificationReducer } from "./notification";
 import { userReducer } from "./user";
 import { cartReducer } from "./cart";
+import { productReducer } from "./products";
 
 // export root reducer
 const index = combineReducers({
@@ -25,6 +26,7 @@ const index = combineReducers({
   notification: notificationReducer,
   user: userReducer,
   cart: cartReducer,
+  products: productReducer,
 });
 export default (state, action) => {
   if (
